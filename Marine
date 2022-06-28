@@ -1,0 +1,30 @@
+import java.util.*;
+public class Marine{
+public static void main(String[] args){
+String[] name={"톤","근","출","정","흥","태","조","팔","칠","철","곤"};
+Scanner s= new Scanner(System.in);
+Random r= new Random();
+
+int index,index2;
+String sung;
+String fullName;
+
+System.out.print("성씨 입력->");
+sung=s.next();
+index=r.nextInt(name.length);
+fullName=sung+name[index];
+while(true){
+index2=r.nextInt(name.length);
+if(index2==index){
+continue;
+}//if
+else 
+fullName+=name[index2];
+break;
+}//while
+
+
+System.out.println(fullName);
+
+}//메인
+}//클래스
