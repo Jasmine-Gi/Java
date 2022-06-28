@@ -1,0 +1,35 @@
+import java.util.*;
+public class Marine2{
+public static void main(String[] args){
+String[] name={"톤","근","출","정","흥","태","조","팔","칠","철","곤"};
+Scanner s= new Scanner(System.in);
+Random r= new Random();
+
+int index,index2,human;
+String sung;
+String fullName;
+
+System.out.println("만들고 싶은 해병의 인원을 입력해라 아쎄이");
+human=s.nextInt();
+for(int i=1;i<=human;i++){
+sung=name[r.nextInt(name.length)];
+fullName=sung;
+index=r.nextInt(name.length);
+fullName+=name[index];
+while(true){
+index2=r.nextInt(name.length);
+if(index2==index){
+continue;
+}//if
+else 
+fullName+=name[index2];
+break;
+}//while
+System.out.print(fullName+" ");
+}//for
+
+
+
+
+}//메인
+}//클래스
