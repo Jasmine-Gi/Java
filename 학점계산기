@@ -1,0 +1,49 @@
+import java.util.*;
+
+class Hakjum{
+public static void main(String[] args){
+final int STD_SEMESTER=6;
+Scanner s=new Scanner(System.in);
+
+//이수 학점 전공/ 교양
+int major;
+int ge;
+
+//표준 학점
+int needmajor; //졸업 전공 학점
+int needge; //졸업 교양 학점
+int needtotal; //졸업 학점
+
+//학생정보
+int stunum; //학번
+int semester; //수료학기
+
+System.out.println("학번을 입력해주세요(2018년도 입학자일 경우 18 입력)");
+stunum=s.nextInt();
+if(stunum<=18){ //18이전 입학자의 졸업 요건
+needtotal=120; needmajor=86; needge=12;
+}
+else{
+needtotal=110; needmajor=81; needge=10;
+}
+System.out.print("이수한 전공 학점을 입력하세요>");
+major=s.nextInt();
+System.out.print("이수한 교양 학점을 입력하세요>");
+ge=s.nextInt();
+System.out.print("이수 학기를 입력하세요(2학년1학기인 경우 3 입력)>");
+semester=s.nextInt();
+
+needtotal-=major+ge;
+needmajor-=major;
+needge-=ge;
+if(needge<0){
+needge=0;
+}
+System.out.println("\n---------------------결과---------------------");
+System.out.println("당신은 현재 "+needtotal+"학점 남았습니다");
+System.out.println("졸업을 위해 필요한 전공학점은 "+needmajor+"학점 남았습니다");
+System.out.println("교양과정에 필요한 학점은 "+needge+"학점 남았습니다");
+System.out.println("한 학기에 필수적으로 들어야 하는 전공학점은"+(needmajor/(STD_SEMESTER-semester)+1)+"입니다.\n한 학기에 들어야하는 총 학점은" + (needtotal/(STD_SEMESTER-semester)+1)+"입니다.");
+}//main
+}//class
+
