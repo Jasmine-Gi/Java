@@ -1,0 +1,25 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class FlowLayoutEx extends JFrame{
+public FlowLayoutEx(){
+setTitle("FlowLayout Sample");
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+Container c=getContentPane();
+//컨텐트팬에 FlowLayout 배치관리자 설정
+c.setLayout(new FlowLayout(FlowLayout.LEFT,30,40));
+//vGap은 40픽셀로, hGap은 30픽셀로
+c.add(new Button("add"));
+c.add(new Button("sub"));
+c.add(new Button("mul"));
+c.add(new Button("div"));
+c.add(new Button("Calculate"));
+setSize(300,200); //프레임크기 300 x200
+setVisible(true); //화면에 프레임 출력
+}
+public static void main(String[] args){
+new FlowLayoutEx();
+}
+}
+//flow layout으로 배치했는데 vgap(가로 차이)는 40픽셀, hgap(세로 차이)는 30픽셀 로 주었음 , add sub mul div Calculate버튼 생성함
+//실행하면 가로로 버튼이 쭉나열되고 프레임 크기를 벗어나면 버튼이 다음줄로 넘어감
